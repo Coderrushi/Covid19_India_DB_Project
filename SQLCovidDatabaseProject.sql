@@ -361,3 +361,24 @@ TO DISK = 'F:\Database_Backups\Covid19_India_FullBackup1.bak'
 WITH FORMAT,
 Name = 'Full Back Of Covid19 India';
 
+--Restore the database
+USE [master]
+RESTORE DATABASE [COVID_DB]
+FROM  DISK = N'F:\Database_Backups\Covid19_India_FullBackup1.bak' 
+WITH  FILE = 1,  
+NOUNLOAD,  
+STATS = 5
+GO
+
+--create snapshot of database
+CREATE DATABASE COVID_DB_Snapshot
+ON (Name = COVID_DB, FILENAME = 'F:\db_snapshots1\Covid19_India.ss')
+AS SNAPSHOT OF COVID_DB;
+
+--to restore database from snapshot
+USE master
+RESTORE DATABASE COVID_DB
+FROM DATABASE_SNAPSHOT = 'COVID_DB_Snapshot'
+GO
+
+
