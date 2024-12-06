@@ -1,1 +1,1 @@
-Performed T-SQL queries, Stored Perocedures, User-defined functions, Common Table Expressions(CTEs), Indexes, and Triggers on COVID_DB database.
+Performed T-SQL queries, Stored Perocedures, User-defined functions, Common Table Expressions(CTEs), Indexes, and Triggers on COVID_DB database with database backup, restore, and snapshot of database.
